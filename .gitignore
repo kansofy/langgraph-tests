@@ -42,3 +42,9 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+# MCP tests
+mcp-tests/node_modules/
+mcp-tests/.env
+mcp-tests/recordings/
+mcp-tests/.token-cache.json
