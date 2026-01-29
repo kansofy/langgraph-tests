@@ -2,6 +2,7 @@
 LangGraph Tests - Pytest Configuration
 
 Imports all fixtures from the harness for use in tests.
+Adds airflow-pipelines to path for lcascade imports.
 """
 
 import sys
@@ -9,6 +10,11 @@ from pathlib import Path
 
 # Add harness to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
+
+# Add airflow-pipelines to path for lcascade imports
+AIRFLOW_PIPELINES_PATH = Path.home() / 'zueggcom' / 'airflow-pipelines-gitlab'
+if AIRFLOW_PIPELINES_PATH.exists():
+    sys.path.insert(0, str(AIRFLOW_PIPELINES_PATH))
 
 # Import all fixtures from harness
 from harness.fixtures import (
